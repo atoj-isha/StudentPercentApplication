@@ -1,0 +1,26 @@
+<center>
+	<h1>Student Listing</h1>
+	<table class="table">
+			<thead>
+			<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Name</th>
+			<th scope="col">Standard</th>
+			<th scope="col">Percentage</th>
+			</tr>
+		</thead>
+			<%@students.each do |student|%>
+			<tbody>
+			<tr scope="row">
+			<td><%= student.id%></td>
+			<td><%= link_to student.name, student%></td>
+			<td><%= student.standard.standard%></td>
+			<td><%= student.percent%></td>
+			</tr>
+			</tbody>
+	<%end%>
+	</table>
+	<a href = '/students/new'class="btn btn-success btn-md">New student</a>
+	<a href = '/search'class="btn btn-success btn-md">Search</a>
+
+</center>

@@ -1,0 +1,59 @@
+<center><h1>Create A Student</h1>
+ <body>
+    <div class="container-fluid" style="position: absolute;left:35%;top: 10%"> 
+      <div class="row">
+        <div class="col-sm col-sm-offset-3 col-sm-offset-1">
+            <div class="row">
+                <div class="card-pf" lstyle="width: 500px;">
+                  <div class="card-body">
+                      <h4 class="card-title" style="text-align: center;font-weight: 200">Create Student</h4>
+						<div class="form-group">
+							<%=form_for @students do |f|%>
+								<%= f.label :name, class:"form-control"%>
+							<%= f.text_field :name, class:"form-control"%>
+							</div>
+							<div class="form-group">
+								<%= f.label :standard, class:"form-control"%>
+								<%=f.select :standard_id, Standard.all.collect {|std| [std.standard,std.id]}, class:"form-control"%>
+							</div>
+								<div class="form-group">
+								<%= f.label :subjects, class:"form-control"%>
+								<%= f.fields_for @results do |subj|%>
+								<%= subj.select :subject_id, Subject.all.collect{|subj| [subj.name,subj.id]}, class:"form-control"%>
+								</div>
+								<div class="form-group">
+									<%= f.label :marks, class:"form-control"%>
+									<%= subj.text_field :mark, class:"form-control"%>
+								</div>
+								<%end%>
+							<div class="form-group">
+							<%= f.label :subjects, class:"form-control"%>
+							<%= f.fields_for @results do |subj|%>
+							<%= subj.select :subject_id, Subject.all.collect{|subj| [subj.name,subj.id]}, class:"form-control"%>
+							</div>
+							<div class="form-group">
+								<%= f.label :marks, class:"form-control"%>
+								<%= subj.text_field :mark, class:"form-control"%>
+							<%end%>
+							</div>
+							<div class="form-group">
+							<%= f.label :subjects, class:"form-control"%>
+							<%= f.fields_for @results do |subj|%>
+							<%= subj.select :subject_id, Subject.all.collect{|subj| [subj.name,subj.id]}, class:"form-control"%>
+							</div>
+							<div class="form-group">							<%= f.label :marks, class:"form-control"%>
+								<%= subj.text_field :mark, class:"form-control"%>
+								<%end%>
+
+							</div>
+						<div class = "actions">
+							<%=f.submit "Submit", class:"btn btn-primary"%>
+						</div>
+						<%end%>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</center>

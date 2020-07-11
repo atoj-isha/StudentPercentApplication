@@ -1,0 +1,21 @@
+<center><h1>Show Page</h1>
+<h2><%= @student.name%></h2>
+<table class="table">
+	<thead>
+	<tr>	
+	<th scope="col">Subject</th>
+	<th scope="col">Marks</th>
+	<th scope="col">Teacher</th>
+	</tr>
+	</thead>
+<h2><%@results.each do |result|%>
+	<tbody>
+	<tr>
+	<td><%= result.subject.name%></td>
+	<td><%= result.mark%></td>
+	<td><%=result.subject.teacher.name%></td>
+	</tr>
+	</tbody>
+<%end%>
+</table>
+</center>

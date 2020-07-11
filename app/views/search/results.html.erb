@@ -1,0 +1,12 @@
+<center><h2>Student Found: <%= @students.size %> </h2>
+	
+	<% if @students.empty? %>
+		<h3>Sorry, no matching results...</h3>
+	<% else %>
+		<ul>
+		<% @students.each do |student| %>
+			<h2><li><%= link_to student.name, student %></li></h2>
+		<% end %>
+		</ul>
+	<% end %>
+</center>
