@@ -20,7 +20,7 @@ standard = 8
 	Standard.new(
 		id:std+1,
 		standard:standard+1 
-		).save(validate: false)
+		)
 end
 puts "Created Standard #{Standard.count}"
 
