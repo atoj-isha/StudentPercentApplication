@@ -14,10 +14,11 @@ Result.reset_pk_sequence
 Student.reset_pk_sequence
 Standard.reset_pk_sequence
 Teacher.reset_pk_sequence
+
 standard = 8
 3.times do |std|
 	standard+=1
-	Standard.new(
+	Standard.create(
 		id:std+1,
 		standard:standard+1 
 		)
